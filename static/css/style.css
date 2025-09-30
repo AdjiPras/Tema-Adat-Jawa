@@ -515,147 +515,76 @@
   }
 
 
-  /* COUNTDOWN SETTING */
-  .simply-countdown {
-      font-size: 20px;
-      display: grid !important;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 5px;
-      justify-items: center;
-      align-items: center;
-      width: 100%;
-      font-weight: 500;
-      font-family: 'Anaktoria', sans-serif;
-  }
+/* COUNTDOWN SETTING */
+.simply-countdown {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr); /* 4 sejajar */
+    gap: 12px;
+    justify-items: center;
+    align-items: center;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Anaktoria', sans-serif;
+}
 
-  .simply-countdown > .simply-section {
-      width: 90px;
-      height: 90px;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0; /* margin pakai gap grid */
-      background: rgb(56, 36, 9) !important;
-      color: white !important;
-      box-shadow:rgb(6,6,7) 0px 10px 15px -5px;
-  }
+/* Kotak oval seragam */
+.simply-countdown > .simply-section {
+    width: 100px;          /* lebar sama */
+    height: 100px;         /* tinggi sama */
+    border-radius: 25px;   /* bentuk rounded oval */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: rgb(56, 36, 9) !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
 
-  .simply-countdown > .simply-section .simply-amount,
-  .simply-countdown > .simply-section .simply-word {
-      display: block;
-      text-align: center;
+/* Angka */
+.simply-countdown > .simply-section .simply-amount {
+    font-size: clamp(20px, 4vw, 36px);
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 4px;
     font-family: 'Alegreya Sans Medium', sans-serif !important;
-  }
+}
 
+/* Label teks (Hari/Jam/Menit/Detik) */
+.simply-countdown > .simply-section .simply-word {
+    font-size: clamp(12px, 2vw, 16px);
+    font-weight: 500;
+    font-family: 'Alegreya Sans Medium', sans-serif !important;
+}
 
-@media (min-width: 360px) {
+/* RESPONSIVE */
+@media (max-width: 768px) {
     .simply-countdown {
-      font-size: 20px;
-      display: grid !important;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 5px;
-      justify-items: center;
-      align-items: center;
-      width: 100%;
-      font-weight: 500;
-      font-family: 'Anaktoria', sans-serif;
-  }
-
-  .simply-countdown > .simply-section {
-      width: 90px;
-      height: 90px;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0; /* margin pakai gap grid */
-      background: rgb(56, 36, 9) !important;
-      color: white !important;
-      box-shadow:rgb(6,6,7) 0px 10px 15px -5px;
-  }
-
-  .simply-countdown > .simply-section .simply-amount,
-  .simply-countdown > .simply-section .simply-word {
-      display: block;
-      text-align: center;
-    font-family: 'Alegreya Sans Medium', sans-serif !important;
-  }
-
+        gap: 8px;
+    }
+    .simply-countdown > .simply-section {
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+    }
 }
 
-@media (min-width: 250px) {
+@media (max-width: 480px) {
     .simply-countdown {
-      font-size: 20px;
-      display: grid !important;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 5px;
-      justify-items: center;
-      align-items: center;
-      width: 100%;
-      font-weight: 500;
-      font-family: 'Anaktoria', sans-serif;
-  }
-
-  .simply-countdown > .simply-section {
-      width: 90px;
-      height: 90px;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0; /* margin pakai gap grid */
-      background: rgb(56, 36, 9) !important;
-      color: white !important;
-      box-shadow:rgb(6,6,7) 0px 10px 15px -5px;
-  }
-
-  .simply-countdown > .simply-section .simply-amount,
-  .simply-countdown > .simply-section .simply-word {
-      display: block;
-      text-align: center;
-    font-family: 'Alegreya Sans Medium', sans-serif !important;
-  }
+        gap: 6px;
+    }
+    .simply-countdown > .simply-section {
+        width: 70px;
+        height: 70px;
+        border-radius: 18px;
+    }
 }
 
-@media (min-width: 200px) {
-  .simply-countdown {
-      font-size: 20px;
-      display: grid !important;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 5px;
-      justify-items: center;
-      align-items: center;
-      width: 100%;
-      font-weight: 500;
-      font-family: 'Anaktoria', sans-serif;
-  }
 
-  .simply-countdown > .simply-section {
-      width: 90px;
-      height: 90px;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0; /* margin pakai gap grid */
-      background: rgb(56, 36, 9) !important;
-      color: white !important;
-      box-shadow:rgb(6,6,7) 0px 10px 15px -5px;
-  }
-
-  .simply-countdown > .simply-section .simply-amount,
-  .simply-countdown > .simply-section .simply-word {
-      display: block;
-      text-align: center;
-      font-family: 'Alegreya Sans Medium', sans-serif !important;
-  }
-}
-  
 
 .fixed-bottom {
     position: fixed;

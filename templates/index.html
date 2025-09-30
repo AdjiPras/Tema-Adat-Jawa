@@ -203,7 +203,7 @@
         </div>
 
         <!-- Kolom tengah HOME -->
-        <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-5 mx-auto">
             <body data-bs-spy="scroll" data-bs-target="#navBar" id="weddingHome" style="background-color: #ffffff;">
 
                 <!-- BAGIAN SPINNER LOADING -->
@@ -222,7 +222,8 @@
                         background-image: url('/static/img/thewedding.png'); 
                         background-position: center; 
                         background-repeat: no-repeat; 
-                        background-size: cover;">
+                        background-size: cover;
+                        position: relative;"> <!-- tambahkan relative supaya anak absolut bisa ngikut -->
 
                     <!-- Bagian Atas -->
                     <div class="p-3">
@@ -237,8 +238,6 @@
                             Rini &amp; Dhika
                         </p>
                     </div>
-
-                    
 
                     <!-- Bagian Bawah -->
                     <div class="mb-5 wow fadeInDown">
@@ -273,7 +272,6 @@
                         class="dekorasi-bawah kanan wow fadeInUp" 
                         data-wow-delay="0.6s" 
                         alt="dekorasi kanan">
-                    
 
                 </div>
 
@@ -288,7 +286,7 @@
                         background-repeat: no-repeat; background-size: cover;">
                 
                     <!-- Sapaan Awal -->
-                    <div class="mx-auto text-center mb-2 wow fadeInUp" 
+                    <div class="mx-auto text-center mb-2 wow fadeInUp"  id="mempelai"
                         data-wow-delay="0.1s" 
                         style="max-width: 800px; padding-top: 40px;">
                         <h2 class="text-primary" 
@@ -298,7 +296,7 @@
                             Sugeng Rawuh -->
                         </h2>
 
-                        <h4 class="text-dark mb-0"
+                        <h4 class="text-dark mb-0 p-3"
                             style="font-size: 16px; font-weight: bold; padding-top: 20px; 
                             font-family:'Alegreya Sans Medium', sans-serif !important;">
                             Dengan segala hormat, kami mengundang Bapak/Ibu/Saudara/i, untuk hadir pada acara penikahan kami.
@@ -306,7 +304,7 @@
                     </div>
 
                     <!-- Mempelai Wanita -->
-                    <div class="mx-auto text-center mb-0 wow fadeInRight"  id="mempelai"
+                    <div class="mx-auto text-center mb-0 wow fadeInRight" 
                         data-wow-delay="0.1s" 
                         style="max-width: 800px;">
                         <!-- Mempelai Wanita -->
@@ -497,7 +495,7 @@
                             </h1><br/><br/>
 
                             <!-- Ucapan Awal -->
-                            <h4 class="wow fadeInRight" data-wow-delay="0.6s" 
+                            <h4 class="p-3 wow fadeInRight" data-wow-delay="0.6s" 
                                 style="margin-top: 0; font-size: 17px; color: rgb(40, 51, 34) !important; text-shadow: var(--shadow) !important; 
                                 font-family:'Alegreya Sans Medium', sans-serif !important; font-weight: bold;">
                                 Kami berharap Bapak/Ibu/Saudara/i untuk menjadi bagian dari hari istimewa kami.
@@ -513,16 +511,15 @@
                             <span class="simply-countdown wow zoomIn pt-4" data-wow-delay="0.6s"></span>
                             <br/>
 
-                            <!-- Tombol Save the Date -->
-                            <!-- <a href="#weddingAbouts" 
-                                id="savedate" 
-                                class="wow fadeInUp" 
-                                data-wow-delay="0.6s" 
-                                style="font-family:'Alegreya Sans Medium', sans-serif !important; 
-                                color: #cb9832 !important; box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;">
-                                <i class="fa fa-calendar-check"></i>
-                                Save the Date
-                            </a> -->
+                            <div class="col-12 d-flex justify-content-center">
+                                <a href="https://calendar.app.google/V7vsLmzTGs1YroUQ6" target="_blank" id="lok"
+                                    class="wow zoomIn" data-wow-delay="0.6s"
+                                    style="color:#af7b0c !important; background-color: #382409; font-family:'Alegreya Sans Medium', sans-serif !important;
+                                        font-size:14px; border-radius:20px; padding:10px 20px;
+                                        box-shadow:rgb(6,6,7) 0px 10px 15px -5px; display:inline-block;">
+                                    <i class="fa fa-calendar-check"></i>&nbsp;&nbsp; Add To Calendar
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -814,7 +811,7 @@
                         style="z-index: 1000; max-width: 800px; padding-top: 20px; padding-bottom: 20px;">
                         
                         <img src="{{ url_for('static', filename='img/icon-acara.png') }}" alt="" width="100"
-                        class="wow zoomIn" data-wow-delay="0.6s">
+                        class="wow zoomIn" data-wow-delay="0.6s" style="margin-top: 40px;">
 
                         <h5 class="text-primary mb-0 wow zoomIn" data-wow-delay="0.8s" 
                             style="font-weight: bold; font-family:'Alegreya Sans Medium', sans-serif !important;
@@ -826,13 +823,13 @@
                         <img src="{{ url_for('static', filename='img/garis.png') }}" alt="" width="300"
                             class="wow zoomIn" data-wow-delay="0.7s">
                         
-                        <h3 class="text-primary wow fadeInRight" data-wow-delay="0.6s" 
+                        <!-- <h3 class="text- p-3 wow fadeInRight" data-wow-delay="0.6s" 
                             style="font-weight: bold; color: rgb(40, 51, 34) !important; font-size: 20px; margin-top: 50px;"
                         >
                             وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ
-                        </h3>
-                        <h4 class="text-dark mb-0 wow fadeInLeft" data-wow-delay="0.6s" 
-                            style="font-weight: bold; color: rgb(40, 51, 34) !important; font-size: 14px; margin-top: 10px; 
+                        </h3> -->
+                        <h4 class="text-dark mb-0 p-3 wow fadeInLeft" data-wow-delay="0.6s" 
+                            style="font-weight: 0; color: rgb(40, 51, 34) !important; font-size: 18px; margin-top: 10px; 
                             font-family:'Alegreya Sans Medium', sans-serif !important;"
                         >
                             "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, 
@@ -870,13 +867,14 @@
                         <h5 class="text-primary mb-0 wow zoomIn" data-wow-delay="0.6s" 
                             style="font-weight: bold; margin-top: 0px; margin-bottom: 30px; font-size: 30px !important; 
                                 color: rgb(40, 51, 34) !important;font-family:'Anaktoria', sans-serif;">
-                            RSVP
+                            Ucapan & Do'a
                         </h5>
-                        <h5 class="text-primary mb-0 wow zoomIn" data-wow-delay="0.6s" 
+                        <h5 class="text-primary mb-0 wow zoomIn p-3" data-wow-delay="0.6s" 
                             style="font-weight: 0; font-family:'Alegreya Sans Medium', sans-serif !important;
                             margin-top: 30px; margin-bottom: 30px; font-size: 20px !important; 
                             color: rgb(40, 51, 34) !important;">
-                            Berikan ucapan & do'a terbaik untuk kami berdua
+                            Merupakan suatu kehormatan dan kebahagiaan apabila Bapak/Ibu/Saudara/i 
+                                    berkenan memberikan doa restu kepada kami.
                         </h5>
                     </div>
 
@@ -888,7 +886,7 @@
 
                                     <!-- Form Input -->
                                     <form id="my-form" style="margin-bottom: 10px;" method="POST" 
-                                        action="https://script.google.com/macros/s/AKfycbx3wmvaAwVRSNwe-WwsF4cSj_2VRGxVDqc-ci8r5j77vfgPcPEWseBsdwUZM_QYCrO_3Q/exec">
+                                        action="https://script.google.com/macros/s/AKfycbw8T3B990dFj8OeQNRUAFT8FmDlOrWsAuLRAeQhooUE0YgnKMTfp3nxMsjjUf7mewTJ5w/exec">
                                         <div class="row gx-4 gy-3">
 
                                             <!-- Input Nama -->
@@ -948,6 +946,7 @@
                                                     class="btn btn-sm btn-light" 
                                                     style="color: #cb9832 !important; 
                                                         border: 0; 
+                                                        margin-top: 30px;
                                                         box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; 
                                                         font-family:'Alegreya Sans Medium', sans-serif !important;">
                                                     <i class="fa fa-comment-dots"></i>
@@ -961,11 +960,10 @@
                                     <iframe class="wow fadeInDown" 
                                         data-wow-delay="0.6s" 
                                         frameborder="0" 
-                                        src="https://script.google.com/macros/s/AKfycbx3wmvaAwVRSNwe-WwsF4cSj_2VRGxVDqc-ci8r5j77vfgPcPEWseBsdwUZM_QYCrO_3Q/exec" 
+                                        src="https://script.google.com/macros/s/AKfycbw8T3B990dFj8OeQNRUAFT8FmDlOrWsAuLRAeQhooUE0YgnKMTfp3nxMsjjUf7mewTJ5w/exec" 
                                         style="width: 100%; 
                                             height: 40vh; 
-                                            margin-top: 20px; 
-                                            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; 
+                                            margin-top: 40px; 
                                             border-radius: 8px;">
                                     </iframe>
                                 </div>
@@ -999,7 +997,7 @@
                         >
                             Kirim Hadiah
                         </h5>
-                        <p style="margin-top: 0px; padding: 20px; color: rgb(40, 51, 34); text-align: center; 
+                        <p style="margin-top: 0px; padding: 20px; width: 80%; margin: 0 auto; color: rgb(40, 51, 34); text-align: center; 
                             font-family:'Alegreya Sans Medium', sans-serif !important;">
                             Doa Restu Anda merupakan karunia yang sangat berarti bagi kami. 
                             Namun jika Anda ingin memberi hadiah, bisa melalui informasi dibawah ini
