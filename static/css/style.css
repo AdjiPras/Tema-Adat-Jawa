@@ -1,4 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/clambake-october-six');
+@import url('https://fonts.cdnfonts.com/css/clambake-october-six');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500&display=swap');
+
 /*** Spinner Start ***/
 #spinner {
     opacity: 0;
@@ -441,7 +444,7 @@
 }
 /*** copyright end ***/
 
-/* TAMBAHAN */
+/* BUTTON CSS TAMBAHAN */
 #buka {
     font-family: 'Clambake October Six', sans-serif;
     font-size: 15px;
@@ -514,76 +517,180 @@
     text-decoration: none;
   }
 
+  #gift-btn {
+    font-family: 'Clambake October Six', sans-serif;
+    font-size: 15px;
+    padding: 15px;
+    border-radius: 30px;
+    color: white !important; 
+    background-color:  rgb(56, 36, 9)!important;
+  }
+  #gift-btn:hover {
+    font-family: 'Clambake October Six', sans-serif;
+    font-size: 15px;
+    padding: 15px;
+    border-radius: 30px;
+    color: rgb(56, 36, 9) !important; 
+    background-color: white !important;
+    text-decoration: none;
+  }
+
+  /* BUTTON COPY */
+#copyBtnBPD {
+  font-family: 'Clambake October Six', sans-serif;
+  font-size: 15px;
+  padding: 15px;
+  border-radius: 30px;
+  border: none; /* hilangkan border default */
+  color: white !important; 
+  background-color: rgb(56, 36, 9) !important;
+}
+#copyBtnBPD:hover {
+  font-family: 'Clambake October Six', sans-serif;
+  font-size: 15px;
+  padding: 15px;
+  border-radius: 30px;
+  border: none; /* pastikan hover juga tidak ada border */
+  color: rgb(56, 36, 9) !important; 
+  background-color: white !important;
+  text-decoration: none;
+}
+
+#copyBtnDana {
+  font-family: 'Clambake October Six', sans-serif;
+  font-size: 15px;
+  padding: 15px;
+  border-radius: 30px;
+  border: none;
+  color: white !important; 
+  background-color: rgb(56, 36, 9) !important;
+}
+#copyBtnDana:hover {
+  font-family: 'Clambake October Six', sans-serif;
+  font-size: 15px;
+  padding: 15px;
+  border-radius: 30px;
+  border: none;
+  color: rgb(56, 36, 9) !important; 
+  background-color: white !important;
+  text-decoration: none;
+}
+
+#copyBtnAlamat {
+  font-family: 'Clambake October Six', sans-serif;
+  font-size: 15px;
+  padding: 15px;
+  border-radius: 30px;
+  border: none;
+  color: white !important; 
+  background-color: rgb(56, 36, 9) !important;
+}
+#copyBtnAlamat:hover {
+  font-family: 'Clambake October Six', sans-serif;
+  font-size: 15px;
+  padding: 15px;
+  border-radius: 30px;
+  border: none;
+  color: rgb(56, 36, 9) !important; 
+  background-color: white !important;
+  text-decoration: none;
+}
+
+
+/* Custom Swal COPY */
+.swal-anaktoria {
+    font-family: 'Anaktoria', sans-serif !important;
+    font-size: 20px;
+    border-radius: 20px;
+    width: 250px !important;     /* perkecil lebar popup */
+    padding: 15px !important;    /* jarak dalam popup */
+}
+
+/* Teks Swal (supaya bold dan tengah) */
+.swal-anaktoria .swal2-html-container {
+    font-weight: bold !important;   /* teks jadi tebal */
+    text-align: center;
+    font-family: 'Anaktoria', sans-serif !important; /* pastikan pakai font juga */
+    font-size: 20px !important;
+} 
+
+
+
+  /* Custom Swal UCAPAN */
+  /* .swal2-title.swal-custom-title {
+    font-family: 'Clambake October Six', sans-serif !important;
+  }
+  .swal2-html-container.swal-custom-text {
+      font-family: 'Alegreya Sans', sans-serif !important;
+  }
+  .swal-loading-title {
+      font-size: 16px !important;
+      font-weight: normal !important;
+      font-family: 'Alegreya Sans', sans-serif !important;
+  } */
 
 /* COUNTDOWN SETTING */
 .simply-countdown {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr); /* 4 sejajar */
-    gap: 12px;
+    grid-template-columns: repeat(4, 1fr); /* selalu 4 kotak sejajar */
+    gap: clamp(2px, 1vw, 6px);             /* jarak antar kotak lebih rapat */
     justify-items: center;
     align-items: center;
-    width: 90%;
-    max-width: 900px;
+    width: 100%;
+    max-width: 360px;    
     margin: 0 auto;
     font-family: 'Anaktoria', sans-serif;
 }
 
 /* Kotak oval seragam */
 .simply-countdown > .simply-section {
-    width: 100px;          /* lebar sama */
-    height: 100px;         /* tinggi sama */
-    border-radius: 25px;   /* bentuk rounded oval */
+    width: clamp(70px, 22vw, 90px);
+    height: clamp(70px, 22vw, 90px);
+    border-radius: 16px; 
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.95) !important;
-    color: rgb(56, 36, 9) !important;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;
-    padding: 10px;
+    color: rgba(182, 150, 45, 0.95) !important;
+
+    /* ✨ Ganti warna solid dengan gradasi */
+    background: linear-gradient(145deg, rgb(56, 36, 9), rgb(92, 62, 18));
+    
+    padding: clamp(6px, 2vw, 12px);
     text-align: center;
     box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 6px 14px;
 }
 
-/* Angka */
+/* Kotak 1 & 2 → radius besar di kiri atas */
+.simply-countdown > .simply-section:nth-child(1),
+.simply-countdown > .simply-section:nth-child(2) {
+    border-top-right-radius: 30px;
+}
+
+/* Kotak 3 & 4 → radius besar di kanan atas */
+.simply-countdown > .simply-section:nth-child(3),
+.simply-countdown > .simply-section:nth-child(4) {
+    border-top-left-radius: 30px;
+}
+
+/* Angka (selalu di atas word) */
 .simply-countdown > .simply-section .simply-amount {
-    font-size: clamp(20px, 4vw, 36px);
+    order: -1; /* pastikan di atas */
+    font-size: clamp(22px, 6vw, 36px); /* agak lebih besar */
     font-weight: bold;
     line-height: 1.2;
     margin-bottom: 4px;
     font-family: 'Alegreya Sans Medium', sans-serif !important;
 }
 
-/* Label teks (Hari/Jam/Menit/Detik) */
+/* Label teks (selalu di bawah angka) */
 .simply-countdown > .simply-section .simply-word {
-    font-size: clamp(12px, 2vw, 16px);
+    order: 2; /* di bawah amount */
+    font-size: clamp(12px, 3vw, 16px);
     font-weight: 500;
     font-family: 'Alegreya Sans Medium', sans-serif !important;
 }
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .simply-countdown {
-        gap: 8px;
-    }
-    .simply-countdown > .simply-section {
-        width: 80px;
-        height: 80px;
-        border-radius: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .simply-countdown {
-        gap: 6px;
-    }
-    .simply-countdown > .simply-section {
-        width: 70px;
-        height: 70px;
-        border-radius: 18px;
-    }
-}
-
 
 
 .fixed-bottom {
