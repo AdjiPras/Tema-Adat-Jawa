@@ -630,16 +630,36 @@
   } */
 
 /* COUNTDOWN SETTING */
+/* ===============================
+   GLOBAL IMAGE CENTERING
+================================*/
+.img-center {
+    display: block;
+    margin: 0 auto;
+}
+
+/* ===============================
+   COUNTDOWN SECTION
+================================*/
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* COUNTDOWN GRID SETTING */
 .simply-countdown {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr); /* selalu 4 kotak sejajar */
-    gap: clamp(2px, 1vw, 6px);             /* jarak antar kotak lebih rapat */
+    grid-template-columns: repeat(4, 1fr); /* 4 kotak sejajar */
+    gap: clamp(2px, 1vw, 6px);
     justify-items: center;
     align-items: center;
     width: 100%;
-    max-width: 360px;    
+    max-width: 360px;
     margin: 0 auto;
     font-family: 'Anaktoria', sans-serif;
+    text-align: center; /* ✨ pastikan semua isi center */
 }
 
 /* Kotak oval seragam */
@@ -652,10 +672,7 @@
     justify-content: center;
     align-items: center;
     color: rgba(182, 150, 45, 0.95) !important;
-
-    /* ✨ Ganti warna solid dengan gradasi */
     background: linear-gradient(145deg, rgb(56, 36, 9), rgb(92, 62, 18));
-    
     padding: clamp(6px, 2vw, 12px);
     text-align: center;
     box-sizing: border-box;
@@ -676,8 +693,8 @@
 
 /* Angka (selalu di atas word) */
 .simply-countdown > .simply-section .simply-amount {
-    order: -1; /* pastikan di atas */
-    font-size: clamp(22px, 6vw, 36px); /* agak lebih besar */
+    order: -1;
+    font-size: clamp(22px, 6vw, 36px);
     font-weight: bold;
     line-height: 1.2;
     margin-bottom: 4px;
@@ -686,12 +703,11 @@
 
 /* Label teks (selalu di bawah angka) */
 .simply-countdown > .simply-section .simply-word {
-    order: 2; /* di bawah amount */
+    order: 2;
     font-size: clamp(12px, 3vw, 16px);
     font-weight: 500;
     font-family: 'Alegreya Sans Medium', sans-serif !important;
 }
-
 
 .fixed-bottom {
     position: fixed;
