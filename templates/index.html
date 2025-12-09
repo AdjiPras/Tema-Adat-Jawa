@@ -222,41 +222,57 @@
             }
             }
 
-            /* Pastikan semua link dalam footer sosmed putih */
-            .footer-custom.sosmed-icons a,
-            .footer-custom.sosmed-icons a i,
-            .footer-custom.sosmed-icons a span {
-                color: rgb(56, 36, 9) !important;   /* putih default */
-                font-weight: bold !important;
-                text-decoration: none !important;
-                transition: color 0.3s ease;
+            /* FOOTER */
+            .footer-custom {
+                /* background-color: #8a6a2e; */
+                padding: 20px 15px 60px 15px; /* ditambah jarak bawah */
+                color: rgb(56, 36, 9);
+                font-weight: bold;
+                text-align: center;
+                font-family: 'Alegreya Sans', sans-serif;
             }
 
-            /* Hover: jadi gold */
-            .footer-custom.sosmed-icons a:hover,
-            .footer-custom.sosmed-icons a:hover i,
-            .footer-custom.sosmed-icons a:hover span {
-                color: #f3b736 !important;   /* gold */
+            .footer-custom p {
+                margin: 0 0 10px 0;
+                font-size: 13px;
+            }
+
+            .footer-custom p .heart {
+                color: rgb(56, 36, 9);
+            }
+
+            /* Ikon sosmed — DIPERKECIL */
+            .footer-custom .sosmed-icons a {
+                display: inline-block;
+                margin: 0 10px;
+                font-size: 22px;      /* sebelumnya 35 → sekarang kecil */
+                color: rgb(56, 36, 9);
+                font-weight: bold;
+                transition: 0.3s;
+            }
+
+            .footer-custom .sosmed-icons a:hover {
+                opacity: 0.6;
             }
 
             /* Mencegah scroll horizontal */
-* {
-  box-sizing: border-box;
-}
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-.row, .container-fluid {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  overflow-x: hidden;
-}
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+            * {
+            box-sizing: border-box;
+            }
+            html, body {
+            overflow-x: hidden;
+            width: 100%;
+            }
+            .row, .container-fluid {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            overflow-x: hidden;
+            }
+            img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            }
 
         </style>
         </meta>
@@ -1230,6 +1246,15 @@ img {
                                     <span>heroezweb</span>
                                 </a>
                             </div> -->
+                            <!-- FOOTER -->
+                            <footer class="footer-custom">
+                                <p>Made with <span class="heart">❤</span> by Heroezweb</p>
+
+                                <div class="sosmed-icons">
+                                    <a href="https://wa.me/6282302529354" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="https://instagram.com/heroezweb" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </footer>
                         </div>
                     </div>
 
@@ -1464,8 +1489,9 @@ img {
         }
     </script>
 
+    <!-- ===================== SCROLL, AUDIO ===================== -->
     <script>
-        // Fungsi untuk menonaktifkan scroll sebelum undangan dibuka
+        // ===================== DISABLE SCROLL =====================
         function disableScroll() {
             window.onscroll = function () { 
                 window.scrollTo(0, 0); 
@@ -1474,20 +1500,37 @@ img {
             rootElement.style.scrollBehavior = 'auto';
         }
 
-        // Fungsi untuk mengaktifkan scroll setelah undangan dibuka
+        // ===================== ENABLE SCROLL =====================
         function enableScroll() {
             window.onscroll = function () {};
             const rootElement = document.querySelector(":root");
             rootElement.style.scrollBehavior = 'smooth';
 
-            // tampilkan tombol audio setelah buka undangan
-            document.getElementById("audio-container").style.display = "block";
+            // jalankan audio
+            if (typeof playAudio === "function") {
+                playAudio();
+            } else {
+                const song = document.getElementById("song");
+                if (song) {
+                    song.muted = false;
+                    song.play();
 
-            // tidak langsung play — hanya tombolnya muncul
+                    // ===================== SET ICON JADI PAUSE =====================
+                    const audioIcon = document.getElementById("audio-icon");
+                    audioIcon.classList.remove("fa-play");
+                    audioIcon.classList.add("fa-pause");
+                }
+            }
+
+            // tampilkan tombol audio & navbar
+            document.getElementById("audio-container").style.display = "block";
             document.getElementById("bottomNav").style.display = "flex";
+
+            // sembunyikan tombol "BUKA UNDANGAN" setelah diklik
+            document.getElementById("buka").style.display = "none";
         }
 
-        // Disable scroll saat halaman pertama kali dimuat
+        // Disable scroll saat load awal
         disableScroll();
 
         // ===================== AUDIO TOGGLE BUTTON =====================
@@ -1495,10 +1538,9 @@ img {
         const audioBtn = document.getElementById("audio-control");
         const audioIcon = document.getElementById("audio-icon");
 
-        // tombol play/pause manual
         audioBtn.addEventListener("click", () => {
             if (song.paused) {
-                song.muted = false;   // unmute saat user klik play
+                song.muted = false;
                 song.play();
                 audioIcon.classList.remove("fa-play");
                 audioIcon.classList.add("fa-pause");
@@ -1508,39 +1550,6 @@ img {
                 audioIcon.classList.add("fa-play");
             }
         });
-
-        // fungsi agar audio langsung mulai saat undangan dibuka
-        function enableScroll() {
-            window.onscroll = function () {};
-            const rootElement = document.querySelector(":root");
-            rootElement.style.scrollBehavior = 'smooth';
-
-            // tampilkan tombol audio & mulai musik
-            const audioContainer = document.getElementById("audio-container");
-            audioContainer.style.display = "block";
-            song.muted = false;
-            song.play().then(() => {
-                audioIcon.classList.remove("fa-play");
-                audioIcon.classList.add("fa-pause");
-            }).catch(err => {
-                console.log("Autoplay diblokir oleh browser:", err);
-            });
-
-            // tampilkan navbar bawah
-            document.getElementById("bottomNav").style.display = "flex";
-        }
-
-        // ===================== SEMBUNYIKAN TOMBOL BUKA SETELAH DIKLIK =====================
-        const bukaBtn = document.getElementById("buka");
-        if (bukaBtn) {
-            bukaBtn.addEventListener("click", function () {
-                // jalankan fungsi enableScroll
-                enableScroll();
-
-                // sembunyikan tombol setelah diklik
-                bukaBtn.style.display = "none";
-            });
-        }
     </script>
 
     <!-- ===================== COPY TO CLIPBOARD (REKENING / HADIAH) ===================== -->
